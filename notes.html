@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mes notes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e5a58"><meta name="robots" content="noindex"><link rel="icon" href="icon-192.png"><script src="pwa.js" defer></script></head><body><div class="wrap">
+<a class="back home" href="index.html" aria-label="Retour à l'accueil" title="Accueil"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg><span>Retour</span></a>
+<h2>Mes notes</h2>
+<div class="card">
+<p class="sub" style="margin-bottom:10px">Écrivez ici vos remarques. Elles restent enregistrées dans ce navigateur.</p>
+<textarea id="notes" aria-label="Mes notes" style="width:100%;min-height:320px;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;resize:vertical"></textarea>
+<p id="status" class="sub" style="margin:8px 0 0;font-size:14px"></p>
+</div>
+<script>
+(function () {
+  var KEY = "revision-cardio-notes";
+  var ta = document.getElementById("notes");
+  var status = document.getElementById("status");
+  try { ta.value = (window.localStorage && localStorage.getItem(KEY)) || ""; } catch (e) { status.textContent = "Enregistrement indisponible dans ce navigateur."; }
+  var timer = null;
+  ta.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      try { localStorage.setItem(KEY, ta.value); status.textContent = "Notes enregistrées."; }
+      catch (e) { status.textContent = "Enregistrement indisponible dans ce navigateur."; }
+    }, 400);
+  });
+})();
+</script>
+</div><script src="fs.js"></script>
+</body></html>

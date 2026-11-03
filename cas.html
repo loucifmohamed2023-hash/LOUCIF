@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cas cliniques</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--warn:#9a4a12;--warn-soft:#fbefe4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--warn:#f0a868;--warn-soft:#2e2219}}
+:root[data-theme="dark"]{--warn:#f0a868;--warn-soft:#2e2219}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px}
+.btn{font:inherit;font-weight:600;font-size:15px;border:none;cursor:pointer;border-radius:10px;padding:9px 16px;background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:var(--surface);color:var(--accent);border:1px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.cases{display:grid;gap:14px}
+.case{scroll-margin-top:12px}
+.case h3{margin-top:0!important}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--accent)}
+.q{font-weight:600}
+details{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:700;color:var(--accent)}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details[open] summary{margin-bottom:8px}
+.piege{margin:12px 0 0;padding:10px 12px;background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:8px}
+.piege strong{color:var(--warn)}
+</style><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e5a58"><meta name="robots" content="noindex"><link rel="icon" href="icon-192.png"><script src="pwa.js" defer></script></head><body>
+<div class="wrap">
+<a class="back home" href="index.html" aria-label="Retour à l'accueil"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg><span>Retour</span></a>
+<div class="num">Module 4</div>
+<h2>Cas cliniques : prévention cardiovasculaire du sujet âgé</h2>
+<p class="sub">Lisez le cas, répondez, puis ouvrez la correction. Le bouton « Plus de cas » ajoute un nouveau cas.</p>
+
+<div class="bar">
+<button class="btn" id="more" type="button">Plus de cas</button>
+<button class="btn ghost" id="all" type="button">Afficher tous les cas</button>
+<span class="count" id="count" aria-live="polite"></span>
+</div>
+
+<div class="cases" id="cases">
+
+<section class="card body case">
+<h3>Cas 1. Prévention primaire à 86 ans</h3>
+<div class="meta"><span class="tag">HTA</span><span class="tag">Statine</span><span class="tag">Aspirine</span></div>
+<p>Homme de 86 ans, autonome à domicile. HTA, diabète de type 2, dyslipidémie. Aucun antécédent d'infarctus ni d'AVC.</p>
+<p>Traitement : ramipril 5 mg/j, amlodipine 5 mg/j, atorvastatine 20 mg/j, aspirine 75 mg/j.</p>
+<p>Bilan : PA assise 132/70 mmHg ; PA debout à trois minutes 112/62 mmHg, sans symptôme. LDL-C 0,85 g/L. DFG 52 mL/min/1,73 m². MMSE 27/30.</p>
+<p class="q">Analysez le risque, l'objectif tensionnel et les traitements préventifs.</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Risque.</strong> Prévention primaire. Risque élevé : âge, diabète, HTA, maladie rénale chronique stade 3a.</li>
+<li><strong>PA.</strong> Contrôlée en position assise. Hypotension orthostatique : baisse systolique de 20 mmHg (seuil ≥ 20 systolique ou ≥ 10 diastolique). Ne pas intensifier. Réévaluer la PA debout à chaque visite.</li>
+<li><strong>Statine.</strong> Bien tolérée : poursuivre. L'âge seul ne justifie pas l'arrêt.</li>
+<li><strong>Aspirine.</strong> Pas d'indication en prévention primaire à cet âge (ASPREE 2018 ; ESC 2021). Proposer l'arrêt.</li>
+<li><strong>Évaluation gériatrique.</strong> Fragilité, chutes, nutrition, cognition, revue des médicaments.</li>
+</ol>
+</details>
+</section>
+
+<section class="card body case">
+<h3>Cas 2. Statine ancienne chez une patiente de 89 ans</h3>
+<div class="meta"><span class="tag">Statine</span><span class="tag">Déprescription</span></div>
+<p>Femme de 89 ans, autonome. Atorvastatine en prévention primaire depuis dix ans. Aucun effet indésirable.</p>
+<p class="q">Faut-il arrêter la statine ?</p>
+<details><summary>Voir la correction</summary>
+<p>Non, pas systématiquement. Réévaluer selon le risque cardiovasculaire, la fragilité, l'espérance de vie et la tolérance. Décision partagée avec la patiente.</p>
+<div class="piege"><p><strong>Piège :</strong> arrêter sur le seul critère de l'âge.</p></div>
+</details>
+</section>
+
+<section class="card body case">
+<h3>Cas 3. Aspirine en prévention primaire à 82 ans</h3>
+<div class="meta"><span class="tag">Aspirine</span><span class="tag">Iatrogénie</span></div>
+<p>Homme de 82 ans, hypertendu. Aucun antécédent cardiovasculaire. Aspirine 75 mg/j.</p>
+<p class="q">Quel essai guide la décision ? Que faire ?</p>
+<details><summary>Voir la correction</summary>
+<p><strong>ASPREE (2018)</strong> : sujets de 70 ans et plus, sans maladie cardiovasculaire. Aspirine 100 mg/j contre placebo. Pas de bénéfice cardiovasculaire significatif. Hausse significative des hémorragies majeures.</p>
+<p>Conduite : vérifier l'absence d'indication de prévention secondaire. Puis arrêter l'aspirine.</p>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 4. HTA systolique chez une patiente robuste de 84 ans</h3>
+<div class="meta"><span class="tag">HTA</span><span class="tag">HYVET</span></div>
+<p>Femme de 84 ans, autonome, marche seule, sans chute. PA 168/78 mmHg confirmée par automesure. DFG 58 mL/min/1,73 m². Pas d'hypotension orthostatique. Aucun traitement.</p>
+<p class="q">Faut-il traiter ? Quel objectif ? Quel traitement ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Traiter : oui.</strong> HYVET (2008), patients de 80 ans et plus : baisse de la mortalité totale et de l'insuffisance cardiaque sous traitement.</li>
+<li><strong>Objectif.</strong> Patiente robuste : systolique 120 à 129 mmHg si bien tolérée (ESC 2024). Sinon : la plus basse possible sans effet indésirable.</li>
+<li><strong>Traitement.</strong> Commencer à faible dose. IEC ou ARA2, inhibiteur calcique, ou diurétique thiazidique-like. Bithérapie à faible dose ou monothérapie selon la tolérance.</li>
+<li><strong>Surveillance.</strong> PA debout, natrémie, kaliémie et créatinine dans les deux à quatre semaines suivant le début.</li>
+</ol>
+<div class="piege"><p><strong>Piège :</strong> ne pas traiter en raison de l'âge chez une patiente robuste.</p></div>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 5. Patient fragile de 91 ans avec chutes</h3>
+<div class="meta"><span class="tag">Fragilité</span><span class="tag">Chutes</span><span class="tag">Déprescription</span></div>
+<p>Homme de 91 ans, vit en EHPAD. Deux chutes en trois mois. Aide pour la toilette. Échelle de fragilité clinique (CFS) à 6.</p>
+<p>Traitement : périndopril 8 mg, amlodipine 10 mg, indapamide 1,5 mg, furosémide 40 mg (sans insuffisance cardiaque documentée), zopiclone.</p>
+<p>PA assise 118/58 mmHg ; debout 96/50 mmHg avec vertiges. Natrémie 131 mmol/L.</p>
+<p class="q">Quelle conduite ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Diagnostic.</strong> Hypotension orthostatique symptomatique, iatrogène. Hyponatrémie probablement liée aux diurétiques.</li>
+<li><strong>Déprescription progressive.</strong> Arrêter le furosémide sans indication. Arrêter l'indapamide (hyponatrémie). Réduire ensuite les autres molécules selon la PA debout.</li>
+<li><strong>Objectif.</strong> Patient très âgé et fragile : objectif individualisé, sans hypotension orthostatique (ESC 2024).</li>
+<li><strong>Chutes.</strong> Sevrage progressif de la zopiclone. Bilan de chute. Kinésithérapie d'équilibre.</li>
+<li><strong>Suivi.</strong> Natrémie et PA debout à une semaine, puis à un mois.</li>
+</ol>
+<div class="piege"><p><strong>Piège :</strong> ajouter un traitement pour les vertiges sans revoir l'ordonnance.</p></div>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 6. Prévention secondaire après infarctus à 87 ans</h3>
+<div class="meta"><span class="tag">Prévention secondaire</span><span class="tag">LDL</span></div>
+<p>Homme de 87 ans, autonome. Infarctus sans sus-décalage traité par angioplastie il y a un mois. DFG 45 mL/min/1,73 m². LDL-C 1,30 g/L sans traitement.</p>
+<p class="q">Faut-il une statine ? À quelle dose ? Quelle cible ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Statine : oui.</strong> En prévention secondaire, l'âge ne contre-indique pas la statine (méta-analyse CTT 2019 ; ESC 2021).</li>
+<li><strong>Dose.</strong> Commencer à dose modérée chez le sujet très âgé ou insuffisant rénal (ESC 2021). Augmenter selon tolérance et LDL.</li>
+<li><strong>Cible.</strong> LDL-C &lt; 0,55 g/L et baisse ≥ 50 % (ESC 2019). Si non atteinte : ajouter l'ézétimibe.</li>
+<li><strong>Antiagrégants.</strong> Bithérapie antiplaquettaire, en limitant la durée si risque hémorragique élevé (ESC 2023). Préférer le clopidogrel au ticagrélor ou au prasugrel chez le sujet âgé à haut risque hémorragique.</li>
+<li><strong>Surveillance.</strong> Myalgies, CPK si symptômes, transaminases, fonction rénale.</li>
+</ol>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 7. Diabète trop bien équilibré chez un sujet fragile</h3>
+<div class="meta"><span class="tag">Diabète</span><span class="tag">Hypoglycémie</span><span class="tag">Iatrogénie</span></div>
+<p>Femme de 83 ans, fragile, troubles cognitifs légers. Perte de 4 kg en six mois. Gliclazide 120 mg/j et metformine 2 g/j. HbA1c 6,2 %. Deux malaises en fin de matinée. DFG 38 mL/min/1,73 m².</p>
+<p class="q">Analysez la situation. Quelle cible d'HbA1c ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Hypoglycémies probables</strong> sous sulfamide. Risque majoré : âge, dénutrition, insuffisance rénale.</li>
+<li><strong>Cible.</strong> Sujet âgé fragile : HbA1c ≤ 8 % (HAS 2013 ; SFD 2021).</li>
+<li><strong>Désintensifier.</strong> Arrêter le gliclazide. Réduire la metformine à 1 g/j au maximum (DFG 30 à 44).</li>
+<li><strong>Dénutrition.</strong> Albumine, poids, enquête alimentaire. Ne pas imposer de régime restrictif.</li>
+</ol>
+<div class="piege"><p><strong>Piège :</strong> se féliciter d'une HbA1c basse chez un patient fragile.</p></div>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 8. LDL élevé chez un homme robuste de 76 ans</h3>
+<div class="meta"><span class="tag">SCORE2-OP</span><span class="tag">Prévention primaire</span></div>
+<p>Homme de 76 ans, robuste, actif. Ancien fumeur. PA 146/84 mmHg. LDL-C 2,10 g/L. Pas de diabète. Aucun antécédent cardiovasculaire.</p>
+<p class="q">Comment évaluer le risque ? Faut-il une statine ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Risque.</strong> Calculer le SCORE2-OP, validé de 70 à 89 ans (ESC 2021).</li>
+<li><strong>Statine.</strong> Peut être envisagée après 70 ans si risque élevé ou très élevé (ESC 2021, classe IIb). Le bénéfice en prévention primaire après 75 ans reste moins démontré (CTT 2019).</li>
+<li><strong>Alternative.</strong> Ézétimibe : réduction des événements chez des sujets de 75 ans et plus en prévention primaire (EWTOPIA 75, 2019, population japonaise).</li>
+<li><strong>PA.</strong> Confirmer l'HTA par mesure hors cabinet avant de traiter.</li>
+<li><strong>Décision partagée</strong> : bénéfice attendu, préférences, polymédication.</li>
+</ol>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 9. Fin de vie et médicaments préventifs</h3>
+<div class="meta"><span class="tag">Déprescription</span><span class="tag">Soins palliatifs</span></div>
+<p>Femme de 88 ans en EHPAD. Démence évoluée. Grabataire. Dénutrition sévère. Traitement : atorvastatine 40 mg, aspirine 75 mg en prévention primaire, ramipril 5 mg. PA 102/60 mmHg.</p>
+<p class="q">Quels traitements revoir ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Statine.</strong> Arrêt raisonnable. L'arrêt chez des patients à espérance de vie limitée n'a pas augmenté la mortalité à soixante jours et a amélioré la qualité de vie (Kutner, 2015).</li>
+<li><strong>Aspirine.</strong> Sans indication de prévention secondaire : arrêter.</li>
+<li><strong>Ramipril.</strong> PA basse : arrêter ou réduire, en l'absence d'insuffisance cardiaque.</li>
+<li><strong>Méthode.</strong> Concertation avec l'équipe et la famille. Objectif : confort. Outil d'aide : critères STOPP/START (version 3, 2023).</li>
+</ol>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 10. Myalgies sous statine à 82 ans</h3>
+<div class="meta"><span class="tag">Statine</span><span class="tag">Interactions</span></div>
+<p>Homme de 82 ans. Simvastatine 40 mg/j. Introduction récente d'amiodarone pour une fibrillation atriale. Myalgies des cuisses depuis trois semaines. Chutes récentes.</p>
+<p class="q">Quelle démarche ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Interaction.</strong> Amiodarone et simvastatine : simvastatine limitée à 20 mg/j (RCP). Risque de rhabdomyolyse.</li>
+<li><strong>Bilan.</strong> CPK, créatinine, TSH (l'amiodarone peut induire une hypothyroïdie, qui favorise les myalgies).</li>
+<li><strong>Conduite.</strong> Suspendre la statine. Après résolution : statine moins dépendante du CYP3A4 (pravastatine ou rosuvastatine) à faible dose, ou ézétimibe.</li>
+<li><strong>Chutes.</strong> Rechercher une faiblesse musculaire, une hypotension orthostatique, une bradycardie sous amiodarone.</li>
+</ol>
+<div class="piege"><p><strong>Piège :</strong> conclure à une intolérance définitive aux statines sans chercher l'interaction.</p></div>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 11. Tabagisme actif à 78 ans</h3>
+<div class="meta"><span class="tag">Tabac</span><span class="tag">Fonction rénale</span></div>
+<p>Femme de 78 ans. Vingt cigarettes par jour. Artériopathie des membres inférieurs. DFG 28 mL/min/1,73 m². Elle pense qu'arrêter « ne sert plus à rien ».</p>
+<p class="q">Que lui répondre ? Quel traitement ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Bénéfice à tout âge.</strong> L'arrêt réduit le risque cardiovasculaire et la mortalité, même après 75 ans (ESC 2021).</li>
+<li><strong>Substituts nicotiniques</strong> en première intention. Adapter la dose au score de dépendance.</li>
+<li><strong>Varénicline possible.</strong> Insuffisance rénale sévère : dose maximale 1 mg/j (RCP).</li>
+<li><strong>Accompagnement.</strong> Entretien motivationnel, suivi rapproché, tabacologue.</li>
+</ol>
+</details>
+</section>
+
+<section class="card body case" hidden>
+<h3>Cas 12. Sédentarité chez un homme de 80 ans</h3>
+<div class="meta"><span class="tag">Activité physique</span><span class="tag">Chutes</span></div>
+<p>Homme de 80 ans, coronarien stable, sans angor. Sédentaire depuis la retraite. Peur de tomber. Vitesse de marche 0,7 m/s.</p>
+<p class="q">Quelles recommandations d'activité physique ?</p>
+<details><summary>Voir la correction</summary>
+<ol>
+<li><strong>Volume.</strong> 150 à 300 minutes par semaine d'activité d'intensité modérée (OMS 2020). Commencer bas, progresser lentement.</li>
+<li><strong>Programme multicomposante</strong> au moins trois jours par semaine : équilibre et renforcement musculaire (OMS 2020). Il réduit le risque de chute.</li>
+<li><strong>Vitesse de marche &lt; 0,8 m/s</strong> : marqueur de fragilité et de sarcopénie. Évaluer la nutrition et les apports protéiques.</li>
+<li><strong>Coronarien.</strong> Proposer une réadaptation cardiaque encadrée.</li>
+</ol>
+</details>
+</section>
+
+</div>
+<footer><strong>À vérifier :</strong> les chiffres marqués « à vérifier » doivent être contrôlés dans les articles originaux avant l'examen.</footer>
+</div>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('#cases .case'));
+  var more=document.getElementById('more'),all=document.getElementById('all'),count=document.getElementById('count');
+  function shown(){return cards.filter(function(c){return !c.hidden}).length}
+  function update(){
+    var n=shown();
+    count.textContent=n+' cas sur '+cards.length;
+    var done=n>=cards.length;
+    more.disabled=done;all.disabled=done;
+    if(done)more.textContent='Tous les cas sont affichés';
+  }
+  more.addEventListener('click',function(){
+    var next=cards.find(function(c){return c.hidden});
+    if(!next)return;
+    next.hidden=false;
+    next.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    update();
+  });
+  all.addEventListener('click',function(){cards.forEach(function(c){c.hidden=false});update()});
+  update();
+})();
+</script>
+<script src="fs.js"></script>
+</body></html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Programme du DIU</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e5a58"><meta name="robots" content="noindex"><link rel="icon" href="icon-192.png"><script src="pwa.js" defer></script></head>
+<body>
+<div class="wrap">
+<a class="back home" href="index.html">← Accueil</a>
+<h1>Programme 2026-2027</h1>
+<p class="sub">DIU Maladies cardiovasculaires du sujet âgé. Version du 8 octobre 2026.</p>
+
+<div class="prog-legend">
+  <span class="chip done">Cours fait</span>
+  <span class="chip todo">À faire</span>
+  <span class="count" id="count"></span>
+</div>
+
+<div id="prog" class="prog"></div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<footer>Examen écrit : juin 2027, le jeudi après le congrès PAPA, de 15 h à 17 h.</footer>
+</div>
+
+<script>
+// fait: lien de la page existante → bouton « Modifier ». Sinon → bouton « Créer ».
+const P = [
+ {d:"Jeudi 8 octobre 2026", t:"Vieillissement cardiovasculaire", c:[
+  ["Épidémiologie cardiovasculaire et vieillissement. Vieillissement vasculaire expérimental et humain","J. Belmin","vieillissement.html"],
+  ["Vieillissement cardiaque expérimental et humain. Épidémiologie cardiovasculaire et vieillissement","P. Assayag","vieillissement.html"],
+  ["Prévention primaire et secondaire chez le sujet âgé : synthèse, recommandations","J. Blacher","cours.html"]]},
+ {d:"Jeudi 15 octobre 2026", t:"Évaluation gériatrique", c:[
+  ["Vieillissement démographique et espérance de vie. Syndrome de fragilité. Évaluation gérontologique. Structures gérontologiques, aides à domicile","M. Piccoli","eval-ger.html"],
+  ["Hypotensions. Dysautonomies","A. Hacil"]]},
+ {d:"Jeudi 5 novembre 2026", t:"Maladie coronaire (1)", c:[
+  ["Infarctus ST+ chez les personnes âgées","P. Assayag"],
+  ["Approche clinique des chutes du sujet âgé","S. Pariel"],
+  ["Dyslipidémies du sujet âgé","F. Boccara"]]},
+ {d:"Jeudi 19 novembre 2026", t:"Maladie coronaire (2)", c:[
+  ["Maladie coronaire chronique du sujet âgé : particularités cliniques, explorations, traitements","G. Ducrocq"],
+  ["Syndromes coronariens aigus ST− du sujet âgé : présentations, conduite à tenir, cas cliniques","M. Slama"]]},
+ {d:"Jeudi 26 novembre 2026", t:"Facteurs de risque", c:[
+  ["Diabète du sujet âgé","M. Soudani"],
+  ["Troubles hydro-électrolytiques du sujet âgé","M. Noaillon"],
+  ["Analyse de tracés ECG","P. De Normandie"]]},
+ {d:"Jeudi 3 décembre 2026", t:"Imagerie cardiaque", c:[
+  ["Échographie cardiaque du sujet âgé","A. Bouchachi"],
+  ["Imagerie de coupe chez le sujet âgé : coroscanner, scanner et IRM cardiaques","M.T. Bailly"],
+  ["Coronarographie et angioplastie chez le sujet âgé : qui, quand, comment","H. Benamer"]]},
+ {d:"Jeudi 17 décembre 2026", t:"Insuffisance cardiaque (1)", c:[
+  ["Insuffisance cardiaque du sujet âgé : physiopathologie, particularités cliniques, démarches diagnostique et étiologique, amylose","F. Beauvais"],
+  ["Insuffisance cardiaque à FEVG préservée : cas cliniques, traitement","P. Iaria"],
+  ["L'insuffisance rénale chez le sujet âgé cardiaque","H. François"]]},
+ {d:"Jeudi 7 janvier 2027", t:"HTA", c:[
+  ["HTA du sujet âgé : épidémiologie, retentissement et complications, explorations","O. Hanon"],
+  ["Stratégies thérapeutiques de l'HTA du sujet âgé : grandes études et pratiques","O. Hanon"]]},
+ {d:"Jeudi 21 janvier 2027", t:"Insuffisance cardiaque (2)", c:[
+  ["Amylose cardiaque","A. Broussier"],
+  ["Traitements de l'insuffisance cardiaque du sujet âgé : grandes études, attitudes pratiques, cas cliniques","G. Jondeau"],
+  ["Activité physique et réadaptation cardiaque du sujet âgé (insuffisance cardiaque, infarctus)","P. Duc"]]},
+ {d:"Jeudi 4 février 2027", t:"Pathologies neurovasculaires", c:[
+  ["AVC du sujet âgé : prise en charge à la phase aiguë et prévention secondaire","G. Buard"],
+  ["AVC aigu du sujet âgé : place de la revascularisation","C. Denier"],
+  ["Sténoses carotidiennes du sujet âgé : quand faut-il les opérer ?","C. Petitjean"]]},
+ {d:"Jeudi 25 février 2027", t:"Troubles du rythme", c:[
+  ["FA du sujet âgé et traitements ; place de la fermeture de l'auricule","P. Assayag"],
+  ["Traitement antithrombotique de la FA du sujet âgé","O. Hanon"],
+  ["Anti-arythmiques et bradycardisants chez le sujet âgé","C. Lafuente"]]},
+ {d:"Jeudi 11 mars 2027", t:"Troubles des fonctions cognitives", c:[
+  ["Évaluation des fonctions cognitives. Syndrome confusionnel. Sémiologie de la démence","E. Duron"],
+  ["Dépression du sujet âgé cardiaque. Psychotropes chez le sujet âgé","S. Pariel"],
+  ["Prise en charge palliative du cardiaque âgé : aide à la décision","M. Neiss"],
+  ["Réflexions éthiques à travers des cas concrets","M. Piccoli"]]},
+ {d:"Jeudi 25 mars 2027", t:"Pathologies vasculaires", c:[
+  ["Artériopathies du sujet âgé et anévrysme de l'aorte : conduite à tenir","G. Goudot"],
+  ["Ulcères veineux et artériels chez le sujet âgé","J. Charbit"],
+  ["Syncopes du sujet âgé : démarche diagnostique, cas cliniques","J.J. Monsuez, P. Baudinaud"],
+  ["Évaluation cardiaque préopératoire du sujet âgé","D. Benhamou"]]},
+ {d:"Jeudi 1er avril 2027", t:"Médicaments", c:[
+  ["Particularités pharmacodynamiques du sujet âgé, adaptation des posologies","C. Verstuyft"],
+  ["Iatrogénie des médicaments cardiovasculaires et prévention","L. Zerah"],
+  ["Bradycardies : indications du pacemaker ; place du DAI et de la CRT après 80 ans","C. Moini"]]},
+ {d:"Jeudi 13 mai 2027", t:"Anticoagulants et MTEV", c:[
+  ["Anticoagulants du sujet âgé (HBPM, AVK, AOD) : modalités d'emploi et précautions","I. Mahé"],
+  ["Phlébite et embolie pulmonaire : diagnostic, traitement, prévention","E. Pautas"],
+  ["Radiologie interventionnelle chez le sujet âgé","M. Sapoval"]]},
+ {d:"Jeudi 20 mai 2027", t:"Valves et chirurgie cardiaque", c:[
+  ["Endocardites du sujet âgé et prévention","X. Duval"],
+  ["Valvulopathies du sujet âgé : RAC et autres valvulopathies, TAVI","B. Iung"],
+  ["Chirurgie cardiaque du sujet âgé : indications, résultats, perspectives","G. Lebreton"]]}
+];
+
+const root = document.getElementById('prog');
+let done = 0, total = 0;
+P.forEach(m => {
+  const sec = document.createElement('section');
+  sec.className = 'mod';
+  sec.innerHTML = `<div class="num">${m.d}</div><h2>${m.t}</h2>`;
+  const ul = document.createElement('ul');
+  ul.className = 'courses';
+  m.c.forEach(([titre, prof, lien]) => {
+    total++; if (lien) done++;
+    const li = document.createElement('li');
+    li.className = 'course ' + (lien ? 'is-done' : 'is-todo');
+    const btn = lien
+      ? `<a class="act modif" href="${lien}">Modifier</a>`
+      : `<button type="button" class="act creer">Créer</button>`;
+    li.innerHTML = `${btn}<div class="ctext"><span class="ctitle">${titre}</span><span class="cprof">${prof}</span></div>`;
+    if (!lien) li.querySelector('button').addEventListener('click', () => creer(titre, prof, m.d));
+    ul.appendChild(li);
+  });
+  sec.appendChild(ul);
+  root.appendChild(sec);
+});
+document.getElementById('count').textContent = `${done} / ${total} cours faits`;
+
+const toast = document.getElementById('toast');
+let tm;
+function show(msg){ toast.textContent = msg; toast.hidden = false; clearTimeout(tm); tm = setTimeout(()=>toast.hidden = true, 6000); }
+function creer(titre, prof, date){
+  const txt = `Crée le cours « ${titre} » (${prof}, ${date}) selon les instructions du projet. Voici la transcription et mes notes :`;
+  const ok = () => show('Demande copiée. Collez-la dans la conversation Claude avec la transcription et vos notes.');
+  const ko = () => show('Copie impossible. Écrivez à Claude : « ' + txt + ' »');
+  try { navigator.clipboard.writeText(txt).then(ok, ko); } catch(e){ ko(); }
+}
+</script>
+<script src="fs.js"></script>
+</body>
+</html>

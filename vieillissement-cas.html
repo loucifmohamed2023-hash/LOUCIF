@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cas clinique vieillissement CV</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e5a58"><meta name="robots" content="noindex"><link rel="icon" href="icon-192.png"><script src="pwa.js" defer></script></head>
+<body>
+<div class="wrap">
+<a class="back home" href="index.html">← Accueil</a> <a class="back" href="vieillissement.html">Cours détaillé</a>
+<div class="num">Module 1 · Cas clinique · 10 QROC</div>
+<h1>Mme D., 84 ans</h1>
+
+<section class="card body">
+<h3>Énoncé</h3>
+<p>Mme D., 84 ans, vit seule. Elle consulte pour une dyspnée d'effort, qui s'aggrave depuis trois mois.</p>
+<p><strong>Antécédents</strong> : HTA depuis vingt ans, diabète de type 2 depuis quinze ans (HbA1c 7,8 %), insuffisance rénale chronique (DFG 42 ml/min/1,73 m²).</p>
+<p><strong>Traitement</strong> : amlodipine 10 mg, indapamide 1,5 mg, metformine 500 mg deux fois par jour.</p>
+<p><strong>Gériatrie</strong> : deux chutes en six mois, au lever. Vitesse de marche 0,7 m/s. MMSE 26/30. Perte de 3 kg en six mois.</p>
+<p><strong>Examen</strong> : PA couchée 172/68 mmHg. PA debout à trois minutes 146/62 mmHg. FC 78/min, régulière. Œdèmes des chevilles. Crépitants aux deux bases.</p>
+<p><strong>Échocardiographie</strong> : FEVG 62 %. HVG concentrique. E/A 0,7. E/e' moyen 16. Volume de l'OG 42 ml/m². Valve aortique scléreuse, Vmax 2,1 m/s.</p>
+<p><strong>Biologie</strong> : NT-proBNP 1 450 pg/ml.</p>
+</section>
+
+<p class="hint">Répondez mentalement, puis touchez « Réponse ».</p>
+<div id="cas" class="qlist"></div>
+</div>
+
+<script>
+const Q = [
+ ["Calculez la pression pulsée de Mme D. Quel profil tensionnel présente-t-elle ?",
+  "PP = 172 − 68 = <strong>104 mmHg</strong>. PAS élevée, PAD basse : <strong>HTA systolique isolée</strong> avec pression pulsée élargie, typique du sujet âgé."],
+ ["Expliquez le mécanisme de ce profil tensionnel.",
+  "Rigidité des grosses artères (élastine fragmentée, ↑ collagène, AGEs, calcifications) → perte de l'effet Windkessel → moindre amortissement de l'éjection → ↑ PAS. Le recul élastique diastolique diminue → PAD stable puis basse → ↑ PP."],
+ ["Pourquoi son diabète aggrave-t-il ce vieillissement artériel ? Citez les deux mécanismes.",
+  "L'hyperglycémie chronique accélère la formation des <strong>AGEs</strong>. <strong>1. Pontage</strong> collagène–AGE–collagène → collagène rigide → ↑ rigidité, ↑ VOP. <strong>2. Voie RAGE</strong> : AGEs → RAGE → NF-κB → ↑ ROS et cytokines → ↓ NO → dysfonction endothéliale."],
+ ["Quel examen mesure la rigidité artérielle ? Quel seuil est pathologique ?",
+  "La <strong>VOP carotido-fémorale</strong>. Une valeur <strong>&gt; 10 m/s</strong> signe une atteinte artérielle (ESC/ESH 2018). Plus l'aorte est rigide, plus la VOP est élevée."],
+ ["Expliquez le rôle de l'onde réfléchie dans l'apparition de son HVG.",
+  "↑ VOP → l'onde réfléchie revient plus tôt, en <strong>systole</strong> au lieu de la diastole → ↑ PAS centrale → ↑ <strong>postcharge</strong> VG → ↑ travail myocardique → HVG. La perfusion coronaire diastolique diminue aussi."],
+ ["Interprétez l'échocardiographie. Quel est votre diagnostic ?",
+  "FEVG conservée (62 %). E/A &lt; 1 : trouble de la relaxation. E/e' 16 et OG dilatée (42 ml/m²) : <strong>pressions de remplissage élevées</strong>. Avec dyspnée, crépitants, œdèmes et NT-proBNP élevé : <strong>insuffisance cardiaque à FEVG préservée (HFpEF)</strong>."],
+ ["Décrivez la chaîne physiopathologique qui mène à son HFpEF.",
+  "Rigidité artérielle → ↑ postcharge → HVG → fibrose et rigidité du VG → ↓ compliance → dysfonction diastolique → ↑ pressions de remplissage → congestion → HFpEF."],
+ ["Trois semaines plus tard, elle arrive aux urgences en FA rapide à 140/min avec un œdème pulmonaire. Pourquoi la FA est-elle si mal tolérée ?",
+  "VG rigide, dont le remplissage dépend de la <strong>systole auriculaire</strong>. La FA supprime la contraction auriculaire. La tachycardie raccourcit la diastole. → ↓ remplissage VG → ↑ pressions de remplissage → congestion → <strong>décompensation</strong>."],
+ ["Analysez ses chutes au lever. Quel mécanisme ? Quels facteurs aggravants dans son traitement ?",
+  "PAS : 172 → 146 mmHg, soit −26 mmHg : <strong>hypotension orthostatique</strong> (baisse de la PAS ≥ 20 mmHg). Mécanisme : ↓ sensibilité baroréflexe, adaptation posturale lente. Facteurs aggravants : <strong>diurétique (indapamide)</strong> et vasodilatateur (amlodipine à forte dose), possible déshydratation."],
+ ["Quels éléments guident la décision thérapeutique chez Mme D. ? Quelle cible tensionnelle ?",
+  "Ce n'est pas l'âge seul. Elle est <strong>fragile</strong> : chutes, marche lente, amaigrissement. À évaluer : autonomie, cognition, fonction rénale (DFG 42 : adapter les doses), polymédication, risque de chute, espérance de vie, objectifs de la patiente. Cible chez le sujet fragile : PA <strong>aussi basse que raisonnablement possible</strong> sans hypotension orthostatique (ESC 2024). Toujours mesurer la PA debout."]
+];
+document.getElementById('cas').innerHTML = Q.map((q,i)=>
+ `<details class="q"><summary><span class="qn">QROC ${i+1}</span> ${q[0]} <span class="reveal">Réponse</span></summary><p class="ans">${q[1]}</p></details>`).join('');
+</script>
+<script src="fs.js"></script>
+</body>
+</html>
