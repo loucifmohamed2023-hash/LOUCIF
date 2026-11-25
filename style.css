@@ -122,3 +122,8 @@ label{font-weight:600}
 .qlist .q .ansbox p:last-child,.qlist .q .ansbox ul:last-child,.qlist .q .ansbox ol:last-child{margin-bottom:0}
 .casec{margin-top:14px}
 .casec .qlist{margin-top:12px}
+
+/* Tableaux lisibles sur téléphone : défilement horizontal plutôt que mots coupés */
+.tbl table{min-width:520px}
+.tbl th,.tbl td{overflow-wrap:normal;word-break:normal}
+.tbl td:first-child,.tbl th:first-child{min-width:8em}
