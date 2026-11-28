@@ -331,5 +331,7 @@ document.getElementById('qroc-list').innerHTML = QROC.map((q,i)=>
 </script>
 <script src="fs.js"></script>
 <script src="tts.js" defer></script>
+<script>if(location.hash==="#ecouter"){window.addEventListener("load",function(){setTimeout(function(){var b=document.querySelector(".tts-go");if(b)b.click();},500);});}</script>
+<script src="back.js"></script>
 </body>
 </html>
