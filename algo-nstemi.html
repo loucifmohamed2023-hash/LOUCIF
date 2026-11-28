@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Algorithme NSTEMI</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.45;color:#1a1a1a;margin:0;background:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:12px 14px 40px}
+ul{margin:4px 0 6px 18px;padding:0}li{margin:2px 0}</style>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e5a58"><meta name="robots" content="noindex"><link rel="icon" href="icon-192.png"><script src="pwa.js" defer></script></head><body><div class="wrap">
+<section id="algo-nstemi" class="algo-red">
+<style>
+.algo-red{margin:18pt 0;padding:14px;border:2px solid #b3261e;border-radius:12px;background:#fff6f5;color:#1a1a1a}
+.algo-red h3{color:#b3261e!important;margin:0 0 6px;font-size:14pt}
+.algo-red p{margin:4px 0}
+.algo-red .st{border-radius:10px;padding:10px 12px;margin:0;border:1.5px solid #b3261e;background:#fff}
+.algo-red .st h4{margin:0 0 4px;font-size:11.5pt;color:#b3261e}
+.algo-red .st ul{margin:4px 0 4px 18px}
+.algo-red .st .cat{display:block;margin-top:6px;padding:6px 10px;border-radius:8px;background:#b3261e;color:#fff;font-weight:700}
+.algo-red .st.n2{border-color:#d9480f}.algo-red .st.n2 h4{color:#d9480f}.algo-red .st.n2 .cat{background:#d9480f}
+.algo-red .st.n3{border-color:#e67700}.algo-red .st.n3 h4{color:#b35c00}.algo-red .st.n3 .cat{background:#e67700}
+.algo-red .st.n4{border-color:#2b8a3e}.algo-red .st.n4 h4{color:#2b8a3e}.algo-red .st.n4 .cat{background:#2b8a3e}
+.algo-red .start{background:#b3261e;color:#fff;border-radius:10px;padding:10px 12px;font-weight:700;text-align:center}
+.algo-red .arr{text-align:center;color:#b3261e;font-size:18pt;line-height:1;margin:2px 0}
+.algo-red .note{margin-top:10px;padding:8px 10px;border-left:4px solid #b3261e;background:#fff}
+@media print{.algo-red{break-inside:avoid}}
+</style>
+<h3>Algorithme de prise en charge du NSTEMI (ESC 2023)</h3>
+<p><strong>Synthèse.</strong> Dans l'infarctus sans sus-décalage persistant du segment ST (NSTEMI), le délai de la coronarographie dépend du niveau de risque. On classe d'abord le patient : instable ou stable. Chez le patient stable, le score GRACE, l'électrocardiogramme et la cinétique de la troponine fixent le délai.</p>
+<div class="start">Douleur thoracique, électrocardiogramme sans sus-décalage persistant du segment ST, troponine ultrasensible<br>Traitement médical, surveillance continue du rythme</div>
+<div class="arr">▼</div>
+<div class="st n1"><h4>1. Patient instable : très haut risque</h4>
+<p>Un seul critère suffit :</p>
+<ul>
+<li>douleur thoracique persistante ou récidivante malgré le traitement médical ;</li>
+<li>instabilité hémodynamique ou état de choc cardiogénique ;</li>
+<li>insuffisance cardiaque aiguë : œdème aigu du poumon ;</li>
+<li>trouble du rythme ventriculaire grave ou arrêt cardiaque récupéré ;</li>
+<li>complication mécanique : rupture de pilier mitral, rupture septale, rupture de la paroi libre ;</li>
+<li>modifications récidivantes du segment ST, surtout un sus-décalage intermittent.</li>
+</ul>
+<span class="cat">Conduite à tenir comme un STEMI : coronarographie immédiate, en moins de 120 minutes. Transfert immédiat si le centre n'a pas de salle de coronarographie.</span></div>
+<div class="arr">▼ <span style="font-size:11pt;font-weight:700">patient stable</span></div>
+<div class="st n2"><h4>2. Patient stable à haut risque</h4>
+<p>Un seul critère suffit :</p>
+<ul>
+<li>score GRACE supérieur à 140 ;</li>
+<li>modifications dynamiques du segment ST ou de l'onde T, ou sus-décalage transitoire du segment ST ;</li>
+<li>troponine en augmentation : NSTEMI confirmé par l'algorithme de la troponine ultrasensible.</li>
+</ul>
+<span class="cat">Coronarographie précoce dans les 24 heures.</span></div>
+<div class="arr">▼</div>
+<div class="st n3"><h4>3. Patient stable à risque intermédiaire</h4>
+<ul><li>score GRACE entre 109 et 140.</li></ul>
+<span class="cat">Coronarographie dans les 72 heures.</span></div>
+<div class="arr">▼</div>
+<div class="st n4"><h4>4. Patient stable à bas risque</h4>
+<ul><li>aucun des critères précédents.</li></ul>
+<span class="cat">Stratégie invasive sélective : test d'ischémie ou imagerie non invasive, coronarographie si le test est positif.</span></div>
+<p class="note"><strong>Divergence avec les recommandations.</strong> Le délai de 72 heures pour le risque intermédiaire vient de l'ESC 2015. L'ESC 2020 et l'ESC 2023 ne gardent que trois niveaux : très haut risque, haut risque et autres patients. Pour ces derniers, la stratégie invasive est sélective, pendant l'hospitalisation.</p>
+<p class="note"><strong>Sujet âgé.</strong> Même stratégie que chez le sujet plus jeune (ESC 2023). La décision tient compte de la fragilité, de la cognition, des comorbidités, de l'espérance de vie et du souhait du patient. Voie radiale. Doses adaptées à la clairance de Cockcroft-Gault. Limiter le produit de contraste.</p>
+</section>
+</div><script src="back.js"></script>
+</body></html>
